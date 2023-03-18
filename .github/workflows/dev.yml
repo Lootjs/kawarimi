@@ -21,9 +21,9 @@ jobs:
       - name: Install npm dependencies
         run: npm install --ignore-scripts --no-audit
       - name: Build app
-        run: npm run build-qic --if-present || exit 1
+        run: npm run build-qic || exit 1
       - name: The build has failed
         if: ${{ failure() }}
-        run: 'job failed'
+        run: 'echo "job failed"'
       - name: Deploy to Server
-        run: 'success'
+        run: 'echo "success"'
